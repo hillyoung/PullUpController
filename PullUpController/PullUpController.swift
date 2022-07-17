@@ -8,6 +8,7 @@
 
 import UIKit
 
+@objcMembers
 open class PullUpController: UIViewController {
     
     public enum Action {
@@ -477,7 +478,7 @@ extension UIViewController {
      - parameter animated: Pass true to animate the adding; otherwise, pass false.
      - parameter completion: Optional completion handler to be called after the PullUpController is added.
      */
-    open func addPullUpController(_ pullUpController: PullUpController,
+    @objc open func addPullUpController(_ pullUpController: PullUpController,
                                   initialStickyPointOffset: CGFloat,
                                   animated: Bool,
                                   completion: ((Bool) -> Void)? = nil) {
@@ -509,7 +510,7 @@ extension UIViewController {
      - parameter animated: Pass true to animate the removing; otherwise, pass false.
      - parameter completion: Optional completion handler to be called after the PullUpController is removed.
      */
-    open func removePullUpController(_ pullUpController: PullUpController, 
+    @objc open func removePullUpController(_ pullUpController: PullUpController,
                                      animated: Bool, 
                                      completion: ((Bool) -> Void)? = nil) {
         pullUpController.hide()
@@ -543,7 +544,7 @@ extension UIScrollView {
      Attach the scroll view to the provided pull up controller in order to move it with the scroll view content.
      - parameter pullUpController: the pull up controller to move with the current scroll view content.
      */
-    open func attach(to pullUpController: PullUpController) {
+    @objc open func attach(to pullUpController: PullUpController) {
         pullUpController.internalScrollView?.detach(from: pullUpController)
         pullUpController.internalScrollView = self
         pullUpController.addInternalScrollViewPanGesture()
@@ -553,7 +554,7 @@ extension UIScrollView {
      Remove the scroll view from the pull up controller so it no longer moves with the scroll view content.
      - parameter pullUpController: the pull up controller to be removed from controlling the scroll view.
      */
-    open func detach(from pullUpController: PullUpController) {
+    @objc open func detach(from pullUpController: PullUpController) {
         pullUpController.removeInternalScrollViewPanGestureRecognizer()
         pullUpController.internalScrollView = nil
     }
