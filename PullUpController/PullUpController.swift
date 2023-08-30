@@ -291,7 +291,7 @@ open class PullUpController: UIViewController {
         }
     }
     
-    private func nearestStickyPointY(yVelocity: CGFloat) -> CGFloat {
+    open func nearestStickyPointY(yVelocity: CGFloat) -> CGFloat {
         var currentStickyPointIndex = self.currentStickyPointIndex
         if abs(yVelocity) > pullUpControllerSkipPointVerticalVelocityThreshold {
             if yVelocity > 0 {
