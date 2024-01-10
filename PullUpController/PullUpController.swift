@@ -121,7 +121,12 @@ open class PullUpController: UIViewController {
     }
     
     // MARK: - Open methods
-    
+    /**
+        设置初始化点
+     */
+    open func set(initialStickyPointOffset:CGFloat) {
+        self.initialStickyPointOffset = initialStickyPointOffset
+    }
     /**
      This method is called before the pull up controller's view move to a point.
      The default implementation of this method does nothing.
