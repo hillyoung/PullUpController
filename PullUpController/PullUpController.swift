@@ -28,6 +28,15 @@ open class PullUpController: UIViewController {
     
     // MARK: - Open properties
     
+    open var enable:Bool {
+        set{
+            panGestureRecognizer?.isEnabled = newValue
+        }
+        get {
+            return panGestureRecognizer?.isEnabled ?? true
+        }
+    }
+    
     /**
      The desired size of the pull up controller’s view, in screen units.
      The default value is width: UIScreen.main.bounds.width, height: 400.
