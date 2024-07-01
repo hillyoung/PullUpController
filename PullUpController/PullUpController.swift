@@ -298,11 +298,15 @@ open class PullUpController: UIViewController {
     }
     
     private func refreshConstraints(newSize: CGSize, customTopOffset: CGFloat? = nil) {
-        if newSize.height > newSize.width {
+        if isPortrait(newSize: newSize) {
             setPortraitConstraints(parentViewSize: newSize, customTopOffset: customTopOffset)
         } else {
             setLandscapeConstraints()
         }
+    }
+    
+    open func isPortrait(newSize: CGSize) -> Bool {
+        return newSize.height > newSize.width
     }
     
     open func nearestStickyPointY(yVelocity: CGFloat) -> CGFloat {
