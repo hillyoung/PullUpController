@@ -1,6 +1,6 @@
 {
   "name": "PullUpController",
-  "version": "0.2.0",
+  "version": "0.8.0",
   "summary": "Pull up controller with multiple sticky points like in iOS Maps.",
   "homepage": "https://github.com/MarioIannotta/PullUpController",
   "license": {
@@ -12,13 +12,12 @@
   },
   "source": {
     "git": "https://github.com/MarioIannotta/PullUpController.git",
-    "tag": "0.2.0"
+    "tag": "0.8.0"
   },
   "platforms": {
     "ios": "9.0"
   },
   "source_files": "PullUpController/**/*.swift",
-  "pod_target_xcconfig": {
-    "SWIFT_VERSION": "4.2"
-  }
+  "swift_versions": "5",
+  "swift_version": "5"
 }
